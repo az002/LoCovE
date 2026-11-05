@@ -1,0 +1,5 @@
+/target/
+/demo/output/
+__pycache__/
+*.pyc
+*.partial-*

@@ -1,0 +1,24 @@
+[package]
+name = "locove"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Alignment-free local coverage estimation from sampled k-mer counts"
+publish = false
+
+[[bin]]
+name = "locove"
+path = "src/main.rs"
+
+[features]
+default = []
+experimental-em = []
+
+[dependencies]
+rayon = "1.10"
+flate2 = { version = "1.0", default-features = false, features = ["zlib-rs", "runtime_detection"] }
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
